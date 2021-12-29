@@ -4,7 +4,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_instance" "my_jenkins_ec2" {
+resource "aws_instance" "myec2instance" {
     count           = var.is_ec2 ? 1 : 0
     ami             = var.ami_id
     key_name        = var.key_name
@@ -15,7 +15,7 @@ resource "aws_instance" "my_jenkins_ec2" {
     }
 }
 
-resource "aws_s3_bucket" "my_jenkins_bucket" {
+resource "aws_s3_bucket" "mys3bucket" {
   count           = var.is_ec2 ? 0 : 1
   bucket = "sujithbucket"
   acl = "private"
