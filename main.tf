@@ -15,13 +15,14 @@ resource "aws_instance" "myec2instance" {
     }
 }
 
-resource "aws_s3_bucket" "mys3bucket" {
-  count           = var.is_ec2 ? 0 : 1
-  bucket = "sujithbucket"
-  acl = "private"
 
-  tags = {
-      name = "sujithbucket"
-      Environment = "Dev"
-  }
+resource "aws_s3_bucket" "mys3"{
+ count           = var.is_ec2 ? 0 : 1
+ bucket = "sujith-2"
+ acl    = "private"
+ 
+ tags = {
+  name = "sujith-2"
+  Environment = "Dev"
+ }
 }
