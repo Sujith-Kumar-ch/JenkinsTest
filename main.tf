@@ -4,14 +4,13 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_instance" "myec2instance" {
+resource "aws_instance" "ec2" {
     count           = var.is_ec2 ? 1 : 0
     ami             = var.ami_id
-    key_name        = var.key_name
     instance_type   = var.instance_type
 
     tags = {
-        name = "sujithec2"
+        name = "Ec2-poc"
     }
 }
 
