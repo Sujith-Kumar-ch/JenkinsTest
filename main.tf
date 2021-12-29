@@ -11,16 +11,17 @@ resource "aws_instance" "my_jenkins_ec2" {
     instance_type   = var.instance_type
 
     tags = {
-        name = "myec2"
+        name = "sujithec2"
     }
 }
 
 resource "aws_s3_bucket" "my_jenkins_bucket" {
   count           = var.is_ec2 ? 0 : 1
-  bucket = "mybucket"
+  bucket = "sujithbucket"
   acl = "private"
 
   tags = {
-      name = "mybucket"
+      name = "sujithbucket"
+      Environment = "Dev"
   }
 }
