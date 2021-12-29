@@ -13,10 +13,7 @@ variable "is_ec2" {
     default = false
 }
 
-variable "key_name" {
-    description = "key name for ec2"
-    default     = "suji"
-}
+
 
 variable "ami_id" {
     description = "AMI for ec2 instance"
