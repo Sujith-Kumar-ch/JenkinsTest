@@ -15,7 +15,7 @@ variable "is_ec2" {
 
 variable "key_name" {
     description = "key name for ec2"
-    default     = "JenkinsTerraformDemo"
+    default     = "suji"
 }
 
 variable "ami_id" {
